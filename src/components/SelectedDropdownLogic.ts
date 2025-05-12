@@ -1,16 +1,17 @@
 import React, { useState, useEffect, useRef } from "react";
 import classes from "../styles/SelectedDropdown.module.scss";
-import type { SelectorOptionProps,SelectDropdownProps } from "../types/types";
+import type { SelectorOptionProps, SelectDropdownProps } from "../types/types";
 
-const SelectedDropdownLogic   = ({options, onChange}:SelectDropdownProps)=> {
-      const [inputDropValue, setInputDropValue] = useState("");
+const SelectedDropdownLogic = ({ options, onChange }: SelectDropdownProps) => {
+  const [inputDropValue, setInputDropValue] = useState("");
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [selectedOptions, setSelectedOptions] = useState<SelectorOptionProps[]>(
-    [] 
+    []
   );
-  const [internalOptions, setInternalOptions] = useState<SelectorOptionProps[]>(options);
+  const [internalOptions, setInternalOptions] =
+    useState<SelectorOptionProps[]>(options);
   const wrapperRef = useRef<HTMLDivElement>(null);
-    useEffect(() => {
+  useEffect(() => {
     setInternalOptions(options);
   }, [options]);
 
@@ -45,7 +46,6 @@ const SelectedDropdownLogic   = ({options, onChange}:SelectDropdownProps)=> {
       if (!internalOptions.find((opt) => opt.value === newOption.value)) {
         setInternalOptions([...internalOptions, newOption]);
       }
-
       setInputDropValue("");
     }
   };
@@ -60,19 +60,18 @@ const SelectedDropdownLogic   = ({options, onChange}:SelectDropdownProps)=> {
     setDropdownOpen(false);
   };
 
- return {
-     classes,
-     wrapperRef,
-     dropdownOpen,
-     inputDropValue,
-     internalOptions,
-     selectedOptions,
-     setDropdownOpen,
-     handleKeyDown,
-     handleOptionClick,
-     handleInputChange,
-
+  return {
+    classes,
+    wrapperRef,
+    dropdownOpen,
+    inputDropValue,
+    internalOptions,
+    selectedOptions,
+    setDropdownOpen,
+    handleKeyDown,
+    handleOptionClick,
+    handleInputChange,
   };
-}
+};
 
-export default SelectedDropdownLogic
+export default SelectedDropdownLogic;

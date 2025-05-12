@@ -1,13 +1,13 @@
-
-import './App.css'
+import ShowDropDownSelector from "./pages/ShowDropDownSelector";
+import classes from "./styles/App.module.scss";
 function App() {
   return (
     <>
-<h1>hi</h1>
-
-
+      <main className={classes.mainContainer}>
+        <ShowDropDownSelector />
+      </main>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

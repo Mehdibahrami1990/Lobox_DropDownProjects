@@ -1,23 +1,23 @@
-import React from 'react'
+import React from "react";
 import type { SelectDropdownProps } from "../types/types";
 import SelectedDropdownLogic from "./SelectedDropdownLogic";
-const SelectedDropdown: React.FC<SelectDropdownProps>  = ({
+const SelectedDropdown: React.FC<SelectDropdownProps> = ({
   options,
   onChange,
   placeholder = "Select or add...",
 }) => {
-      const {
-     classes,
-     wrapperRef,
-     dropdownOpen,
-     inputDropValue,
-     internalOptions,
-     selectedOptions,
-     handleKeyDown,
-     handleOptionClick,
-     handleInputChange,
-     setDropdownOpen
-  } = SelectedDropdownLogic({options, onChange});
+  const {
+    classes,
+    wrapperRef,
+    dropdownOpen,
+    inputDropValue,
+    internalOptions,
+    selectedOptions,
+    handleKeyDown,
+    handleOptionClick,
+    handleInputChange,
+    setDropdownOpen,
+  } = SelectedDropdownLogic({ options, onChange });
   return (
     <div className={classes.dropdownWrapper} ref={wrapperRef}>
       <div
@@ -26,7 +26,7 @@ const SelectedDropdown: React.FC<SelectDropdownProps>  = ({
       >
         <input
           type="text"
-        placeholder={placeholder}
+          placeholder={placeholder}
           value={inputDropValue}
           onChange={handleInputChange}
           onKeyDown={handleKeyDown}
@@ -34,7 +34,7 @@ const SelectedDropdown: React.FC<SelectDropdownProps>  = ({
         />
         <span className={classes.arrow}>&#x25BE;</span>
       </div>
-      {selectedOptions.length > 0 && (
+      {/* {selectedOptions.length > 0 && (
         <div className={classes.selectedTagsBelow}>
           {selectedOptions.map((option) => (
             <div key={option.value} className={classes.tag}>
@@ -42,7 +42,7 @@ const SelectedDropdown: React.FC<SelectDropdownProps>  = ({
             </div>
           ))}
         </div>
-      )}
+      )} */}
       {dropdownOpen && (
         <div className={classes.dropdownMenu}>
           {internalOptions.map((option) => (
@@ -64,7 +64,7 @@ const SelectedDropdown: React.FC<SelectDropdownProps>  = ({
         </div>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default SelectedDropdown
+export default SelectedDropdown;
