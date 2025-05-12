@@ -5,4 +5,5 @@ export type SelectorOptionProps = {
 export type SelectDropdownProps = {
   options: SelectorOptionProps[];
   onChange: (selected: SelectorOptionProps[]) => void;
+    placeholder?: string;
 };
