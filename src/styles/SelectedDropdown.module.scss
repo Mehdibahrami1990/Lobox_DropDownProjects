@@ -1,7 +1,7 @@
 .dropdownWrapper {
   position: relative;
-  width: 260px;
-  font-family: 'Inter', sans-serif;
+  width: 360px;
+  font-family: "Inter", sans-serif;
 }
 
 .inputContainer {
@@ -72,14 +72,17 @@
 }
 .selectedTagsBelow {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  // align-items: center;
+  justify-content: center;
+  flex-direction: column;
   gap: 8px;
   margin-top: 8px;
   padding: 4px 8px;
 }
 
 .tag {
-  background-color: #eef2ff;
+  background-color: #B2EBF2;
   color: #3730a3;
   padding: 6px 10px;
   border-radius: 16px;
