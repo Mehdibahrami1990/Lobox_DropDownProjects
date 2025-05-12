@@ -1,11 +1,12 @@
 import ShowDropDownSelector from "./pages/ShowDropDownSelector";
-import classes from "./styles/App.module.scss";
+
+import MainLayout from "./layout/MainLayout";
 function App() {
   return (
     <>
-      <main className={classes.mainContainer}>
+      <MainLayout>
         <ShowDropDownSelector />
-      </main>
+      </MainLayout>
     </>
   );
 }
